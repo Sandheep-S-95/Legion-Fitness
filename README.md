@@ -1,4 +1,4 @@
-# 💪 FitLife: Your Ultimate Fitness Companion 🏋️‍♂️
+# 💪 Legion Fitness: Your Ultimate Fitness Companion 🏋️‍♂️
 
 ![legion](https://github.com/user-attachments/assets/8fdf5f3a-cca0-4ea3-961d-058010ccd661)
 
