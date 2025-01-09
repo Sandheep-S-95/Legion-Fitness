@@ -41,9 +41,10 @@ const updateTask=async(req,res)=>{
     if(!mongoose.Types.ObjectId.isValid(id)){
         return res.status(404).json({msg:"Error, no such task"})
     }
-    const task= await Task.findOneAndUpdate({_id:id},{
-        ...req.body
-    })
+    const task= await Task.findOneAndUpdate({_id:id},
+        { ...req.body },
+        { new: true }
+    )
 
     if(!task){
         return res.status(404).json({error: "No such task"})
