@@ -16,7 +16,7 @@ app.use((req, res, next) => {
 // Use the PORT from environment or default to 4000
 const PORT = process.env.PORT || 4000;
 
-mongoose.connect(process.env.MONGO_DB_URI)
+mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         app.listen(PORT, () => {
             console.log(`Connected to DB & Listening on port ${PORT}`);
