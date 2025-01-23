@@ -1,30 +1,31 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
+import taskRoutes from "./routes/tasks.js";
 
-import taskRoutes from "./routes/tasks.js"
-
-const app=express();
+const app = express();
 dotenv.config();
 
-//middleware
-app.use(express.json())
+app.use(express.json());
 
-app.use((req,res,next) => {
-    console.log(req.path,res.path)
-    next()
-})
+app.use((req, res, next) => {
+    console.log(req.path, req.path)  // Fixed: res.path to req.path
+    next();
+});
 
-//db Connection
-mongoose.connect(process.env.MONGO_URI)
-    .then(()=>{
-        app.listen(process.env.PORT ,()=>{
-            console.log("Connected to DB & Listening on port ",process.env.PORT)
-        })
+// Use the PORT from environment or default to 4000
+const PORT = process.env.PORT || 4000;
+
+mongoose.connect(process.env.MONGO_DB_URI)
+    .then(() => {
+        app.listen(PORT, () => {
+            console.log(`Connected to DB & Listening on port ${PORT}`);
+        });
     })
-    .catch(()=>{
-        console.log(error)
-    })
+    .catch((error) => {
+        console.log(error);
+    });
 
-app.use('/api/tasks',taskRoutes)
+app.use('/api/tasks', taskRoutes);
 
+export default app;  // Add this for Vercel deployment
