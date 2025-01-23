@@ -32,7 +32,7 @@ const Community = () => {
           <div className="p-8 rounded-2xl bg-gradient-to-br from-blue-400 via-red-800 to-blue-800 shadow-xl border border-purple-300">
             <h1 className="text-5xl font-extrabold mb-6 text-white tracking-wide 
               transition-transform duration-500 ease-in-out transform hover:scale-105">
-              Build Community. Build Cult.
+              Build Tribe. Build Cult.
             </h1>
             <p className="text-lg leading-relaxed text-black-200 mb-6">
               Discover a variety of workouts tailored to your fitness level and goals. From strength training 

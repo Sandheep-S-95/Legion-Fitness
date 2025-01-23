@@ -1,3 +1,4 @@
+// TaskForm.jsx
 import { useState } from "react";
 import { useTaskContext } from "../hooks/useTasksContext";
 import { Dumbbell, Plus } from 'lucide-react';
@@ -29,13 +30,12 @@ const TaskForm = () => {
             setLoad('');
             setReps('');
             setError(null);
-            console.log("New task added", json);
             dispatch({ type: "CREATE_TASK", payload: json });
         }
     };
 
     return (
-        <div className="fixed right-4 top-20 w-full max-w-md p-6 md:right-6 md:top-24">
+        <div className="w-full max-w-md mx-auto">
             <form onSubmit={handleSubmit} 
                   className="bg-black border border-blue-500 rounded-lg shadow-lg 
                            shadow-blue-500/20 p-6 transform transition-all duration-300
