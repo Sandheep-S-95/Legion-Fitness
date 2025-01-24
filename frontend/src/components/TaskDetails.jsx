@@ -13,7 +13,7 @@ const TaskDetails = ({ task }) => {
     });
 
     const handleDelete = async () => {
-        const response = await fetch('${import.meta.env.VITE_BACKEND_URL}/api/tasks/' + task._id, {
+        const response = await fetch('https://legion-fitness.onrender.com/api/tasks/' + task._id, {
             method: 'DELETE'
         });
         const json = await response.json();
@@ -26,7 +26,7 @@ const TaskDetails = ({ task }) => {
     const handleUpdate = async (e) => {
         e.preventDefault();
     
-        const response = await fetch('${import.meta.env.VITE_BACKEND_URL}/api/tasks/' + task._id, {
+        const response = await fetch('https://legion-fitness.onrender.com/api/tasks/' + task._id, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'

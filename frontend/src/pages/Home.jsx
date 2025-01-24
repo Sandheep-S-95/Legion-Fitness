@@ -10,12 +10,16 @@ import Footer from "../components/Footer.jsx";
 const Home = ()=>{
     const {tasks,dispatch}=useTaskContext()
     useEffect(()=>{
-        const fetchTasks = async () =>{
-            const response=await fetch("${import.meta.env.VITE_BACKEND_URL}/api/tasks")
-            const json = await response.json()
-            console.log("Hello")
-            if (response.ok){
-                dispatch({type:'SET_TASKS',payload:json})               
+        const fetchTasks = async () => {
+            try {
+                const response = await fetch("https://legion-fitness.onrender.com/api/tasks")
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`)
+                }
+                const json = await response.json()
+                dispatch({type:'SET_TASKS', payload:json})
+            } catch (error) {
+                console.error("Fetch tasks error:", error)
             }
         }
         
