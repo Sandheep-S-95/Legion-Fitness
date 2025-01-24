@@ -13,7 +13,7 @@ const TaskForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const task = { title, load, reps };
-        const response = await fetch("/api/tasks", {
+        const response = await fetch("https://legion-fitness.onrender.com/api/tasks", {
             method: "POST",
             body: JSON.stringify(task),
             headers: {
