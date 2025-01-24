@@ -1,5 +1,5 @@
 {
-  "proxy": "http://localhost:4000/",
+  "proxy": "https://sample-vercel-ashen.vercel.app/api/tasks",
   "name": "frontend",
   "private": true,
   "version": "0.0.0",

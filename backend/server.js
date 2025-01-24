@@ -29,3 +29,4 @@ mongoose.connect(process.env.MONGO_URI)
 app.use('/api/tasks', taskRoutes);
 
 export default app;  // Add this for Vercel deployment
+
