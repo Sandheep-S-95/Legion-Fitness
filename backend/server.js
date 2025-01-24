@@ -9,7 +9,9 @@ dotenv.config();
 
 app.use(cors({
     origin: ['http://localhost:5173', 'https://legion-fitness-frontend.vercel.app'], // Only frontend URLs
-    credentials: true
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Add OPTIONS
+    allowedHeaders: ['Content-Type', 'Authorization']
   }));
   
 
