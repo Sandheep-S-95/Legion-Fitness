@@ -2,9 +2,16 @@ import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import taskRoutes from "./routes/tasks.js";
+import cors from 'cors'
 
 const app = express();
 dotenv.config();
+
+app.use(cors({
+    origin: ['http://localhost:5173', 'https://your-frontend-domain.com'], // Only frontend URLs
+    credentials: true
+  }));
+  
 
 app.use(express.json());
 

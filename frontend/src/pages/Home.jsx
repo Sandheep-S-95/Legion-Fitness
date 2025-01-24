@@ -11,8 +11,9 @@ const Home = ()=>{
     const {tasks,dispatch}=useTaskContext()
     useEffect(()=>{
         const fetchTasks = async () =>{
-            const response=await fetch("/api/tasks")
+            const response=await fetch("${import.meta.env.VITE_BACKEND_URL}/api/tasks")
             const json = await response.json()
+            console.log("Hello")
             if (response.ok){
                 dispatch({type:'SET_TASKS',payload:json})               
             }
