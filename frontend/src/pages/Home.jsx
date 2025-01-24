@@ -26,6 +26,7 @@ const Home = ()=>{
         fetchTasks();
     },[]);
     return(
+        <div>
         <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -61,9 +62,9 @@ const Home = ()=>{
                     </motion.div>
                 </div>
             </div>
-            
-            <Footer />
         </motion.div>
+        <Footer />
+        </div>
     )
 }
 
