@@ -13,7 +13,7 @@ const Footer = () => {
         className="container mx-auto text-center"
       >
         <p className="text-blue-400 text-lg font-semibold">
-          © 2024 Sandheep S. All Rights Reserved.
+          © 2025 Divya Dharshini & Sandheep S. All Rights Reserved.
         </p>
       </motion.div>
     </footer>
